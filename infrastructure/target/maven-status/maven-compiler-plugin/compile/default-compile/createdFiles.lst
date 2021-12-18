@@ -1,0 +1,5 @@
+com/vidal/library/book/BookJpaAdapter.class
+com/vidal/library/book/BookEntity$BookEntityBuilder.class
+com/vidal/library/book/BookRepository.class
+com/vidal/library/book/BookMapper.class
+com/vidal/library/book/BookEntity.class
