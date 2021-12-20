@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 public class BookConfig {
 
     @Bean
-    public BookService bookService(final BookPort port){
+    public BookService bookService(final BookRepository port){
         return new BookService(port);
     }
 }

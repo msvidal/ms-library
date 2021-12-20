@@ -2,7 +2,7 @@ package com.vidal.library.book;
 
 import java.util.List;
 
-public interface BookPort {
+public interface BookRepository {
 
     Book save(Book book);
 

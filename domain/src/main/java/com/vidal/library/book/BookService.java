@@ -7,7 +7,7 @@ import java.util.List;
 @AllArgsConstructor
 public class BookService {
 
-    private final BookPort port;
+    private final BookRepository port;
 
     public Book save(final Book book) {
         return port.save(book);

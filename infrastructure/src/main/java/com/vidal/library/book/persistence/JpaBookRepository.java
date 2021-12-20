@@ -1,7 +1,7 @@
 package com.vidal.library.book.persistence;
 
 import com.vidal.library.book.Book;
-import com.vidal.library.book.BookPort;
+import com.vidal.library.book.BookRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +11,9 @@ import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
-public class BookJpaAdapter implements BookPort {
+public class JpaBookRepository implements BookRepository {
 
-    private final BookRepository repository;
+    private final com.vidal.library.book.persistence.BookRepository repository;
 
     @Override
     public Book save(final Book book) {
