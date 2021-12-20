@@ -2,8 +2,10 @@ package com.vidal.library.book;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.vidal.library.book")
+@EnableJpaRepositories(basePackages = {"com.vidal.library.book.persistence.*"})
 public class LibraryApplication {
 
     public static void main(String[] args) {

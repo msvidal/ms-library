@@ -1,4 +1,4 @@
-package com.vidal.library.book;
+package com.vidal.library.book.persistence;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

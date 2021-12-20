@@ -1,5 +1,6 @@
-package com.vidal.library.book;
+package com.vidal.library.book.persistence;
 
+import com.vidal.library.book.Book;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -1,6 +1,8 @@
-package com.vidal.library.book;
+package com.vidal.library.book.persistence;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.vidal.library.book.Book;
+import com.vidal.library.book.BookPort;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,13 +10,13 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class BookJpaAdapter implements BookPersistencePort {
+@AllArgsConstructor
+public class BookJpaAdapter implements BookPort {
 
-    @Autowired
-    private BookRepository repository;
+    private final BookRepository repository;
 
     @Override
-    public Book save(Book book) {
+    public Book save(final Book book) {
 
         if(book == null) {
             throw new IllegalArgumentException();
@@ -24,7 +26,7 @@ public class BookJpaAdapter implements BookPersistencePort {
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(final Long id) {
         if(id == null) {
             throw new IllegalArgumentException();
         }
@@ -33,7 +35,7 @@ public class BookJpaAdapter implements BookPersistencePort {
     }
 
     @Override
-    public Book findById(Long id) {
+    public Book findById(final Long id) {
 
         if(id == null) {
             throw new IllegalArgumentException();

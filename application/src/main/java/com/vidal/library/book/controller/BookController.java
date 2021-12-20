@@ -1,8 +1,8 @@
 package com.vidal.library.book.controller;
 
 import com.vidal.library.book.Book;
-import com.vidal.library.book.BookServicePort;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.vidal.library.book.BookService;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,33 +16,33 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/book")
+@AllArgsConstructor
 public class BookController {
 
-    @Autowired
-    private BookServicePort bookServicePort;
+    private BookService service;
 
     @PostMapping()
     public Book save(@RequestBody Book book) {
-        return bookServicePort.save(book);
+        return service.save(book);
     }
 
     @PutMapping("")
     public Book update(@RequestBody Book book) {
-        return bookServicePort.save(book);
+        return service.save(book);
     }
 
     @GetMapping("/{id}")
     public Book findById(@PathVariable long id) {
-        return bookServicePort.findById(id);
+        return service.findById(id);
     }
 
     @GetMapping()
     public List<Book> list() {
-        return bookServicePort.list();
+        return service.list();
     }
 
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable long id) {
-        bookServicePort.deleteById(id);
+        service.deleteById(id);
     }
 }
